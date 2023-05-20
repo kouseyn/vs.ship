@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>vs Ship</title>
+	<meta name="description" content="Battleboat.js: A JavaScript AI that beats humans at battleship.">
+	<meta name="keywords" content="Battleboat.js, battleship, AI, robot, JavaScript">
+	<meta name="google" content="notranslate">
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+	<link rel="author" href="https://plus.google.com/+BillMei" />
+	<link rel="publisher" href="https://plus.google.com/+BillMei" />
+
+	<link href="css/styles.css" rel="stylesheet" media="all"/>
+</head>
+<body>
+<div class="container">
+	<h1>VS ship</h1>
+	<p class="tagline">人間 vs AI</p>
+	<p>How to play</p>
+	<ol class="instructions">
+		<li id="step1">まず、左のパネルから戦艦を自分の陣地に配置します</li>
+		<li id="step2">スタートボタンを押します</li>
+		<li id="step3">あいてのマップに戦艦がありそうな場所をクリックして、攻撃しますます<br>
+		</li>
+		<li id="step4">AIもそれに合わせ、あなたが撃ってきたと同時に反撃してきます<br>
+		勝利条件はAI陣地にある隠された戦艦を破壊することです</li>
+	</ol>
+	<div class="game-container">
+		<div id="restart-sidebar" class="hidden">
+			<h2>Try Again</h2>
+			<button id="restart-game">Restart Game</button>
+		</div><div id="roster-sidebar">
+			<h2>戦艦を配置</h2>
+			<ul class="fleet-roster">
+				<li id="patrolboat">巡視船</li>
+				<li id="submarine">潜水艦</li>
+				<li id="destroyer">駆逐船</li>
+				<li id="battleship">戦艦</li>
+				<li id="carrier">空母</li>
+			</ul>
+			<button id="rotate-button" data-direction="0">戦艦を回転</button>
+			<button id="start-game" class="hidden">Start Game</button>
+			<button id="place-randomly" class="hidden">配置してスタート</button>
+		</div><div id="stats-sidebar">
+			<h2>統計</h2>
+			<p><strong>Games Won</strong></p>
+			<p id="stats-wins">0 of 0</p>
+			<p><strong>勝率</strong></p>
+			<p id="stats-accuracy">0%</p>
+			<button id="reset-stats">Reset Stats</button>
+			<button id="prob-heatmap" class="hidden">確率ヒートマップを表示</button>
+		</div><div class="grid-container">
+			<h2>あなたの陣地</h2>
+			<div class="grid human-player"><span class="no-js">Please enable JavaScript to play this game</span></div>
+		</div><div class="grid-container">
+			<h2>AI陣地</h2>
+			<div class="grid computer-player"><span class="no-js">Please enable JavaScript to play this game</span></div>
+		</div>
+	</div>
+	
+	<p>Created by <a href="https://instgram.com/uhhwee_1107/">Kousey</a>.</p>
+	
+</div>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MDXLY4NGC1"></script>
+<script>
+// Don't change this variable.
+var DEBUG_MODE = localStorage.getItem('DEBUG_MODE') === 'true';
+// To turn DEBUG_MODE on, run `setDebug(true);` in the console.
+if (!DEBUG_MODE) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MDXLY4NGC1');
+}
+</script>
+
+<script src="js/battleboat.js"></script>
+<span class="prefetch" id="prefetch1"></span>
+<span class="prefetch" id="prefetch2"></span>
+<span class="prefetch" id="prefetch3"></span>
+</body>
+</html>
